@@ -19,8 +19,12 @@ for i = 1:1:row
     end
 end
 
+Ird_nd = imdilate(Ird_n,[1 1 1;1 1 1; 1 1 1]);
+Ird_ne = imerode(Ird_nd,[1 1 1;1 1 1; 1 1 1]);
+
 figure(1);
-subplot(1,2,1),imagesc(Ird);
-subplot(1,2,2),imagesc(Ird_n);
+subplot(2,2,1),imagesc(Ird);
+subplot(2,2,2),imagesc(Ird_n);
+subplot(2,2,3),imagesc(Ird_nd);
+subplot(2,2,4),imagesc(Ird_ne);
 colormap('gray');
-colorbar;
